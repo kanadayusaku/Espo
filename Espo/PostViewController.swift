@@ -32,11 +32,10 @@ class PostViewController: UIViewController {
         getProfile()
     }
 
-
     //投稿
     @IBAction func postAll(_ sender: Any) {
         // ①各情報を定数化
-        // 投稿する情報は４つ。名前・コメント・投稿画像・プロフィール画像
+        // 投稿する情報は5つ。名前・コメント・投稿画像・プロフィール画像, fav
         // 名前
         let userName = profileNameLabel.text
         // コメント
@@ -57,8 +56,9 @@ class PostViewController: UIViewController {
         }
      let base64ProfileImage = profileImageData.base64EncodedString(options: .lineLength64Characters) as String
 
+        let favNumber: Int = 0
         // ②Firestoreに飛ばす箱を用意
-        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "", "postImage": base64PostImage, "profileImage": base64ProfileImage]
+        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "", "postImage": base64PostImage, "profileImage": base64ProfileImage, "favNumber": favNumber]
 
         // ③userごとFirestoreへpost
         db.collection("user").addDocument(data: user as! [String : Any])

@@ -30,7 +30,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6H-rp-lRc">
                                         <rect key="frame" x="106.5" y="0.0" width="107" height="70"/>
-                                        <state key="normal" title="Button" image="イメージ画像のアイコン素材 その3 (1)"/>
+                                        <state key="normal" title="Button" image="Image"/>
                                         <connections>
                                             <action selector="openPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="snC-uu-0dV"/>
                                         </connections>
@@ -68,11 +68,16 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-Oz-ogV">
-                                                                    <rect key="frame" x="55" y="0.0" width="225" height="50"/>
+                                                                    <rect key="frame" x="55" y="0.0" width="42" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-sw-cim">
+                                                                    <rect key="frame" x="102" y="0.0" width="178" height="50"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                                    <state key="normal" title="★"/>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="PNF-T9-4Pj"/>
@@ -130,7 +135,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="イメージ画像のアイコン素材 その3 (1)" width="256" height="256"/>
+        <image name="Image" width="90" height="90"/>
         <image name="カメラのアイコン素材" width="256" height="256"/>
         <image name="人物アイコン" width="256" height="256"/>
     </resources>

@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
 {
@@ -140,19 +141,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(commentTextView)
         print(cell)
 
-        return cell
-    }
 
-  // セルの高さ
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        // ファボボタン
+        let favButton = cell.viewWithTag(5) as! UIButton
+/*
+        let favNumber = dict["favNumber"] ?? 0
+        print(favNumber)
+*/
+        favButton.setTitle("☆", for: .normal)
+        favButton.addTarget(self, action: #selector(pushFavButton(_:)), for: UIControl.Event.touchUpInside)
+
+        return cell
     }
 
     // カメラ・フォトライブラリへの遷移処理
     func cameraAction(sourceType: UIImagePickerController.SourceType) {
         // カメラ・フォトライブラリが使用可能かチェック
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-
             // インスタンス化
             let cameraPicker = UIImagePickerController()
             // ソースタイプの代入
@@ -168,18 +173,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 取得できた画像情報の存在確認とUIImage型へキャスト。pickedImageという定数に格納
         if let pickedImage = info[.originalImage] as? UIImage {
-            // ①投稿画面への遷移処理
+            // 投稿画面への遷移処理
             let storyboard: UIStoryboard = UIStoryboard(name: "Post", bundle: nil)
             guard let vc = storyboard.instantiateViewController(withIdentifier: "Post") as? PostViewController else {
                 print("投稿画面への遷移失敗")
                 return
             }
-            // ②画像の受け渡し(のちほど遷移先でwillPostImageという変数を作ります）
+            // 画像の受け渡し
             vc.willPostImage = pickedImage
             // 画面遷移
             picker.pushViewController(vc, animated: true)
-
         }
     }
+
+   //ファボボタンを追加
+    @objc func pushFavButton(_ sender: UIButton) {
+        sender.setTitle("★", for: .normal)
+    }
 }
+
 
