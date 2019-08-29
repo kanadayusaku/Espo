@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="i6c-6U-3Jk">
+            <objects>
+                <viewController storyboardIdentifier="Profile" id="Ofw-Mj-Qoj" customClass="profileViewController" customModule="Espo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qn4-K0-NuI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TtV-Rk-aag">
+                                <rect key="frame" x="50" y="50" width="220" height="380"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q48-C8-T5f">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" secondItem="Q48-C8-T5f" secondAttribute="width" multiplier="1:1" id="fSD-gr-bc5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RkK-WE-VN7">
+                                        <rect key="frame" x="0.0" y="230" width="220" height="150"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98L-2a-7bF">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="een-p4-1yK">
+                                                <rect key="frame" x="0.0" y="40" width="220" height="30"/>
+                                                <state key="normal" title="プロフ画像変更"/>
+                                                <connections>
+                                                    <action selector="changeProfPhoto:" destination="Ofw-Mj-Qoj" eventType="touchUpInside" id="6MQ-it-37Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgU-C7-a2B">
+                                                <rect key="frame" x="0.0" y="80" width="220" height="30"/>
+                                                <state key="normal" title="決定"/>
+                                                <connections>
+                                                    <action selector="save:" destination="Ofw-Mj-Qoj" eventType="touchUpInside" id="XwF-JQ-FQr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75H-bK-k8j">
+                                                <rect key="frame" x="0.0" y="120" width="220" height="30"/>
+                                                <state key="normal" title="ログアウト"/>
+                                                <connections>
+                                                    <action selector="logOut:" destination="Ofw-Mj-Qoj" eventType="touchUpInside" id="JTo-bV-dTB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Q48-C8-T5f" firstAttribute="width" secondItem="TtV-Rk-aag" secondAttribute="width" id="wTl-Of-YtJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pgl-X4-JuM" firstAttribute="trailing" secondItem="TtV-Rk-aag" secondAttribute="trailing" constant="50" id="Abo-lz-kpq"/>
+                            <constraint firstItem="TtV-Rk-aag" firstAttribute="top" secondItem="Qn4-K0-NuI" secondAttribute="top" constant="50" id="HRD-ue-ggs"/>
+                            <constraint firstItem="TtV-Rk-aag" firstAttribute="leading" secondItem="pgl-X4-JuM" secondAttribute="leading" constant="50" id="o9K-I2-iaV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pgl-X4-JuM"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="Q48-C8-T5f" id="2KA-z4-lyd"/>
+                        <outlet property="userNameTextField" destination="98L-2a-7bF" id="hPL-Ri-ajU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o86-uh-cCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="15.401785714285714"/>
+        </scene>
+    </scenes>
+</document>
