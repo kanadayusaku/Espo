@@ -1,0 +1,6 @@
+framework module Pods_EspoUITests {
+  umbrella header "Pods-EspoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post View Controller-->
+        <scene sceneID="cHd-sI-Unw">
+            <objects>
+                <viewController storyboardIdentifier="Post" id="8gM-ER-mGq" customClass="PostViewController" customModule="Espo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cuY-HT-vYQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6ok-pg-dNS">
+                                <rect key="frame" x="20" y="70" width="374" height="586"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aVb-WY-XzZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bf0-os-5ZE">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-sJ-hSa">
+                                                <rect key="frame" x="80" y="0.0" width="294" height="70"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="F0g-DM-mzP"/>
+                                            <constraint firstItem="bf0-os-5ZE" firstAttribute="width" secondItem="d8C-sJ-hSa" secondAttribute="height" multiplier="1:1" id="n9C-4a-3eo"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gik-i3-eHH">
+                                        <rect key="frame" x="0.0" y="100" width="374" height="80"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your text." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-oj-Ys9">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="nXs-MZ-clX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="huV-Bv-2u9">
+                                        <rect key="frame" x="0.0" y="210" width="374" height="296"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xma-s1-4uP">
+                                        <rect key="frame" x="0.0" y="536" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="NOx-5G-CUH"/>
+                                        </constraints>
+                                        <state key="normal" title="投稿">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postAll:" destination="8gM-ER-mGq" eventType="touchUpInside" id="HUj-im-Phi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6ok-pg-dNS" firstAttribute="leading" secondItem="sfh-Du-AQm" secondAttribute="leading" constant="20" id="Hp3-CL-srg"/>
+                            <constraint firstItem="6ok-pg-dNS" firstAttribute="top" secondItem="sfh-Du-AQm" secondAttribute="top" constant="50" id="rUQ-Kn-kP2"/>
+                            <constraint firstItem="sfh-Du-AQm" firstAttribute="bottom" secondItem="6ok-pg-dNS" secondAttribute="bottom" constant="80" id="rlN-TL-XdS"/>
+                            <constraint firstItem="sfh-Du-AQm" firstAttribute="trailing" secondItem="6ok-pg-dNS" secondAttribute="trailing" constant="20" id="sDj-vG-mCE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sfh-Du-AQm"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextView" destination="KKp-oj-Ys9" id="iPi-Y9-KtH"/>
+                        <outlet property="postImageView" destination="huV-Bv-2u9" id="e4o-oc-08u"/>
+                        <outlet property="profileImageView" destination="bf0-os-5ZE" id="jJU-DZ-uOf"/>
+                        <outlet property="profileNameLabel" destination="d8C-sJ-hSa" id="65Z-Gl-zTM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IL1-ex-f81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="157"/>
+        </scene>
+    </scenes>
+</document>
