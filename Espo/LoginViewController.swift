@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     //eメールアドレス入力
     @IBOutlet weak var email: UITextField!

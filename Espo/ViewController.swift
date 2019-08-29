@@ -11,11 +11,9 @@ import FirebaseFirestore
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate
-
 {
     // Firestoreのインスタンス化
     let db = Firestore.firestore()
-
     //リフレッシュのインスタンス化
     let refreshControl = UIRefreshControl()
     // 投稿情報を全て格納
@@ -47,7 +45,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // 情報を取得
         fetch()
         // tableViewをリロード
-        tableView.reloadData()
+         tableView.reloadData()
         // リフレッシュを止める
         refreshControl.endRefreshing()
     }
@@ -72,17 +70,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-
     // カメラを開くボタン
     @IBAction func openCamera(_ sender: Any) {
         cameraAction(sourceType: .camera)
     }
-
     // アルバムボタン
     @IBAction func openPhotos(_ sender: Any) {
         cameraAction(sourceType: .photoLibrary)
     }
-
      // プロフィールボタン
     @IBAction func profile(_ sender: Any) {
         // 対象のstoryboardファイルを選択
@@ -144,7 +139,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         // ファボボタン
         let favButton = cell.viewWithTag(5) as! UIButton
-/*
+
+/* ★の数を増やす際の拡張用
         let favNumber = dict["favNumber"] ?? 0
         print(favNumber)
 */

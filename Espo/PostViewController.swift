@@ -56,9 +56,8 @@ class PostViewController: UIViewController {
         }
      let base64ProfileImage = profileImageData.base64EncodedString(options: .lineLength64Characters) as String
 
-        let favNumber: Int = 0
         // ②Firestoreに飛ばす箱を用意
-        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "", "postImage": base64PostImage, "profileImage": base64ProfileImage, "favNumber": favNumber]
+        let user: NSDictionary = ["userName": userName ?? "" , "comment": comment ?? "", "postImage": base64PostImage, "profileImage": base64ProfileImage]
 
         // ③userごとFirestoreへpost
         db.collection("user").addDocument(data: user as! [String : Any])
@@ -73,7 +72,6 @@ class PostViewController: UIViewController {
             commentTextView.resignFirstResponder()
         }
     }
-
 
     // ローカルで持っているprofile情報を反映
     func getProfile() {
@@ -92,8 +90,6 @@ class PostViewController: UIViewController {
 
             profileImageView.image = #imageLiteral(resourceName: "人物アイコン") // (resourceName: "人物アイコン")
         }
-
-
 
         // 名前情報があればprofNameに格納
         if let profName = UserDefaults.standard.object(forKey: "userName") as? String {
